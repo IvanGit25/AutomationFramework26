@@ -1,0 +1,39 @@
+package productTests;
+
+import baseTestCases.TestUtils;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
+public class ProductTest1 extends TestUtils {
+    // public class TestUtils extends DataProviders !!!
+
+    private static final String BASE_PRODUCT_ID = "add-to-cart-sauce-labs-";
+    //id=add-to-cart-sauce-labs-  backpack
+    //id=add-to-cart-sauce-labs-  bike-light
+    //id=add-to-cart-sauce-labs-  fleece-jacket
+
+    @Test(dataProvider = "items to be added")
+    public void addProductToCart(String items) {
+        WebElement userNameInput = driver.findElement(By.id("user-name"));
+        userNameInput.click();
+        userNameInput.clear();
+        userNameInput.sendKeys("standard_user");
+
+        WebElement passwordInput = driver.findElement(By.id("password"));
+        passwordInput.click();
+        passwordInput.clear();
+        passwordInput.sendKeys("secret_sauce");
+
+        WebElement loginBtn = driver.findElement(By.cssSelector("[name=login-button]"));
+        loginBtn.click();
+
+        WebElement itemToBeAdded = driver.findElement(By.id(BASE_PRODUCT_ID + items));
+        itemToBeAdded.click();
+
+        WebElement shoppingCartBadge = driver.findElement(By.cssSelector(".shopping_cart_badge"));
+
+        Assert.assertEquals(shoppingCartBadge.getText(), "1");
+    }
+}
