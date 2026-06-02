@@ -32,6 +32,7 @@ public class TestUtils extends DataProviders {
 
         //implicit wait:
         //driver.manage().timeouts().implicitlyWait(Duration.from(Duration.ofSeconds(implicitWait)));
+
         driver.get(targetURL);
 
         //Explicit Wait:
