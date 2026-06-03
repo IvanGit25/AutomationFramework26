@@ -4,7 +4,7 @@
     <test name="SuccessfulLogin">
         <classes>
             <class name="loginTests.SuccessfulLogin"></class>
-            <class name="loginTests.UnSuccessfulLogin"></class>
+            <class name="loginTests.LoginWithProblemUser"></class>
         </classes>
     </test>
 </suite>
