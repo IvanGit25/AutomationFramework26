@@ -9,9 +9,9 @@ import org.openqa.selenium.support.PageFactory;
 public class ProductsPage extends BasePage {
 
     // Strings with elements to be used in Method for Products in Cart!
-    private static final String PRODUCT_BASE_ID = "add-to-cart-sauce-lab-";
+    private static final String PRODUCT_BASE_ID = "add-to-cart-sauce-labs-";
 
-    private static final String REMOVE_PRODUCT_BASE_ID = "remove-sauce-lab-";
+    private static final String REMOVE_PRODUCT_BASE_ID = "remove-sauce-labs-";
 
     // Find elements for Products Page Title and Shopping Cart Badge!
     @FindBy(xpath = "//span[contains(text(),'Products')]")
